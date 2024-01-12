@@ -1,6 +1,7 @@
 package bossmonster.view;
 
 import bossmonster.util.ParsingUtil;
+import bossmonster.util.Validator;
 import java.util.Scanner;
 
 public class InputView {
@@ -16,8 +17,8 @@ public class InputView {
         return READER.nextLine();
     }
 
-    public String requestPlayerStatus() {
-        System.out.println("플레이어의 HP와 MP를 입력해주세요.(,로 구분)");
-        return READER.nextLine();
+    public String requestPlayerPoints() {
+        System.out.println("플레이어의 HP와 MP를 입력해주세요.(" + Validator.SEPARATOR + "로 구분)");
+        return Validator.validatePointFormat(READER.nextLine());
     }
 }

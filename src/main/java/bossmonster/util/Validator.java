@@ -17,4 +17,11 @@ public class Validator {
         }
         return points;
     }
+
+    public static String validateWhiteSpace(String point) {
+        if (point.strip().isBlank()) {
+            throw new IllegalArgumentException("[ERROR] 공백은 입력할 수 없습니다.");
+        }
+        return point;
+    }
 }

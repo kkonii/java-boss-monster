@@ -2,6 +2,7 @@ package bossmonster;
 
 import bossmonster.domain.Boss;
 import bossmonster.domain.Player;
+import bossmonster.util.ParsingUtil;
 import bossmonster.view.InputView;
 
 public class Game {
@@ -23,6 +24,7 @@ public class Game {
 
     public Player createPlayer() {
         String name = inputView.requestPlayerName();
-        return new Player(name, 0, 0);
+        String points = inputView.requestPlayerPoints();
+        return ParsingUtil.parseToPlayer(name, points);
     }
 }

@@ -20,4 +20,9 @@ public class Player {
             throw new IllegalArgumentException("[ERROR] 플레이어의 초기 hp와 mp의 합은 " + INIT_POINTS_SUMMARY + "가 되어야 합니다.");
         }
     }
+
+    public void attack(Boss boss, Attack attack) {
+        boss.damage(attack);
+        mp += attack.getMpValue();
+    }
 }

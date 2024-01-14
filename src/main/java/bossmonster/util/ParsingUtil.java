@@ -1,5 +1,6 @@
 package bossmonster.util;
 
+import bossmonster.domain.Attack;
 import bossmonster.domain.Player;
 import java.util.Arrays;
 import java.util.List;
@@ -23,5 +24,9 @@ public class ParsingUtil {
                 .map(InputValidator::validateWhiteSpace)
                 .map(ParsingUtil::parseToInt)
                 .toList();
+    }
+
+    public static Attack parseToAttack(int number) {
+        return Attack.findAttack(number);
     }
 }

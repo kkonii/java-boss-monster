@@ -17,4 +17,8 @@ public class Boss {
             throw new IllegalArgumentException("보스 몬스터 초기 HP는 " + HP_MINIMUM_RANGE + "이상 " + HP_MINIMUM_RANGE + "입니다.");
         }
     }
+
+    public void damage(Attack attack) {
+        hp -= attack.getDamageValue();
+    }
 }

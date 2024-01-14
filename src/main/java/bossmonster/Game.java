@@ -1,5 +1,6 @@
 package bossmonster;
 
+import bossmonster.domain.Attack;
 import bossmonster.domain.Boss;
 import bossmonster.domain.Player;
 import bossmonster.util.ParsingUtil;
@@ -19,17 +20,31 @@ public class Game {
         Boss bossMonster = createBossMonster();
         Player player = createPlayer();
         outputView.printBeginning();
-        int attack = inputView.requestAttack();
+        fight(player, bossMonster);
     }
 
-    public Boss createBossMonster() {
+    private Boss createBossMonster() {
         int bossHP = inputView.requestBossHP();
         return new Boss(bossHP);
     }
 
-    public Player createPlayer() {
+    private Player createPlayer() {
         String name = inputView.requestPlayerName();
         String points = inputView.requestPlayerPoints();
         return ParsingUtil.parseToPlayer(name, points);
+    }
+
+    private void fight(Player player, Boss boss) {
+        Attack attack = ParsingUtil.parseToAttack(inputView.requestAttack());
+        turnPlayer(player, boss, attack);
+        turnBoss(player, boss);
+    }
+
+    private void turnPlayer(Player player, Boss boss, Attack attack) {
+        player.attack(boss, attack);
+    }
+
+    private void turnBoss(Player player, Boss boss) {
+
     }
 }

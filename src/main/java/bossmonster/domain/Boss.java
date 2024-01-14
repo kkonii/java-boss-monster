@@ -1,8 +1,8 @@
 package bossmonster.domain;
 
 public class Boss {
-    private final int HP_MINIMUM_RANGE = 100;
-    private final int HP_MAXIMUM_RANGE = 300;
+    private static final int HP_MINIMUM_RANGE = 100;
+    private static final int HP_MAXIMUM_RANGE = 300;
 
     private final String name = "BOSS";
     private int hp;

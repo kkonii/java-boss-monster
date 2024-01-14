@@ -1,6 +1,6 @@
 package bossmonster.util;
 
-public class Validator {
+public class InputValidator {
     public static final String SEPARATOR = ",";
     private static final String WRONG_POINT_FORMAT = "\\w+[^" + SEPARATOR + "]\\w+";
 

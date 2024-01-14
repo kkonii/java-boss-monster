@@ -14,13 +14,13 @@ public class ParsingUtil {
     }
 
     public static Player parseToPlayer(String name, String points) {
-        List<Integer> hpAndMp = splitPoints(Validator.validateRegex(points));
+        List<Integer> hpAndMp = splitPoints(InputValidator.validateRegex(points));
         return new Player(name, hpAndMp.get(0), hpAndMp.get(1));
     }
 
     private static List<Integer> splitPoints(String points) {
-        return Arrays.stream(points.split(Validator.SEPARATOR))
-                .map(Validator::validateWhiteSpace)
+        return Arrays.stream(points.split(InputValidator.SEPARATOR))
+                .map(InputValidator::validateWhiteSpace)
                 .map(ParsingUtil::parseToInt)
                 .toList();
     }

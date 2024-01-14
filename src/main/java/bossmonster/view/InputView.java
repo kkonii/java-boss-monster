@@ -14,7 +14,7 @@ public class InputView {
 
     public String requestPlayerName() {
         System.out.println("플레이어의 이름을 입력해주세요.");
-        return READER.nextLine();
+        return InputValidator.validateNameLength(READER.nextLine());
     }
 
     public String requestPlayerPoints() {

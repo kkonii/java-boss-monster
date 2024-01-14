@@ -1,5 +1,7 @@
 package bossmonster.domain;
 
+import bossmonster.util.DamageGenerator;
+
 public class Boss {
     private static final int HP_MINIMUM_RANGE = 100;
     private static final int HP_MAXIMUM_RANGE = 300;
@@ -20,5 +22,10 @@ public class Boss {
 
     public void damage(Attack attack) {
         hp -= attack.getDamageValue();
+    }
+
+    public void attack(Player player) {
+        int randomDamage = DamageGenerator.generate();
+        player.damage(randomDamage);
     }
 }

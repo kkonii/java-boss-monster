@@ -21,6 +21,10 @@ public class Player {
         }
     }
 
+    public void damage(int damage) {
+        hp -= damage;
+    }
+
     public void attack(Boss boss, Attack attack) {
         boss.damage(attack);
         mp += attack.getMpValue();

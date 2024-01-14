@@ -45,6 +45,6 @@ public class Game {
     }
 
     private void turnBoss(Player player, Boss boss) {
-
+        boss.attack(player);
     }
 }

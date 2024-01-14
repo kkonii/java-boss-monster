@@ -19,6 +19,7 @@ public class Game {
         Boss bossMonster = createBossMonster();
         Player player = createPlayer();
         outputView.printBeginning();
+        int attack = inputView.requestAttack();
     }
 
     public Boss createBossMonster() {

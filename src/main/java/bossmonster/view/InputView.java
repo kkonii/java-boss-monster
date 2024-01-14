@@ -13,11 +13,13 @@ public class InputView {
     }
 
     public String requestPlayerName() {
+        System.out.println();
         System.out.println("플레이어의 이름을 입력해주세요.");
         return InputValidator.validateNameLength(READER.nextLine());
     }
 
     public String requestPlayerPoints() {
+        System.out.println();
         System.out.println("플레이어의 HP와 MP를 입력해주세요.(" + InputValidator.SEPARATOR + "로 구분)");
         return InputValidator.validatePointFormat(READER.nextLine());
     }

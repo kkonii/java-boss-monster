@@ -20,7 +20,12 @@ public class OutputView {
         System.out.println("(입힌 데미지: " + damageValue + ")");
     }
 
-    public void printGameResult(Player player, int tryCount) {
+    public void printPlayerWin(Player player, int tryCount) {
         System.out.println(player.getName() + "님이 " + tryCount + "번의 전투 끝에 보스 몬스터를 잡았습니다.");
+    }
+
+    public void printPlayerLose(Player player) {
+        System.out.println(player.getName() + "님의 HP가 " + player.getHpValue() + "이 되었습니다.");
+        System.out.println("보스 레이드에 실패했습니다.");
     }
 }

@@ -65,4 +65,12 @@ public class Game {
         int bossDamage = boss.attack(player);
         outputView.printBossAttack(bossDamage);
     }
+
+    private void printGameExit(Player player, Boss boss) {
+        if (player.isFailed()) {
+            outputView.printPlayerLose(player);
+            return;
+        }
+        outputView.printPlayerWin(player, tryCount);
+    }
 }

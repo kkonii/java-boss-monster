@@ -29,4 +29,8 @@ public class Player {
         boss.damage(attack);
         mp += attack.getMpValue();
     }
+
+    public boolean isFailed() {
+        return hp <= 0;
+    }
 }

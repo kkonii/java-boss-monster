@@ -28,4 +28,8 @@ public class Boss {
         int randomDamage = DamageGenerator.generate();
         player.damage(randomDamage);
     }
+
+    public boolean isFailed() {
+        return hp <= 0;
+    }
 }

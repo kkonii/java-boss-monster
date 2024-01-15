@@ -35,12 +35,17 @@ public class Game {
     }
 
     private void fight(Player player, Boss boss) {
-        Attack attack = ParsingUtil.parseToAttack(inputView.requestAttack());
-        turnPlayer(player, boss, attack);
-        turnBoss(player, boss);
+        do {
+            turnPlayer(player, boss);
+            if (boss.isFailed()) {
+                break;
+            }
+            turnBoss(player, boss);
+        } while (!boss.isFailed() || !player.isFailed());
     }
 
-    private void turnPlayer(Player player, Boss boss, Attack attack) {
+    private void turnPlayer(Player player, Boss boss) {
+        Attack attack = ParsingUtil.parseToAttack(inputView.requestAttack());
         player.attack(boss, attack);
     }
 

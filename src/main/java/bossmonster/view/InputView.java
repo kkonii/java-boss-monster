@@ -1,5 +1,6 @@
 package bossmonster.view;
 
+import bossmonster.domain.Attack;
 import bossmonster.util.InputValidator;
 import bossmonster.util.ParsingUtil;
 import java.util.Scanner;
@@ -27,8 +28,8 @@ public class InputView {
     public int requestAttack() {
         System.out.println();
         System.out.println("어떤 공격을 하시겠습니까?");
-        System.out.println(InputValidator.PHYSICS_ATTACK + ". 물리 공격");
-        System.out.println(InputValidator.MAGIC_ATTACK + ". 마법 공격");
-        return InputValidator.validateAttackNumber(READER.nextLine());
+        System.out.println(Attack.PHYSICS.getAttackNumber() + ". 물리 공격");
+        System.out.println(Attack.MAGIC.getAttackNumber() + ". 마법 공격");
+        return ParsingUtil.parseToInt(READER.nextLine());
     }
 }

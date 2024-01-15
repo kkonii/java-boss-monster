@@ -57,6 +57,7 @@ public class Game {
     private void turnPlayer(Player player, Boss boss) {
         Attack attack = ParsingUtil.parseToAttack(inputView.requestAttack());
         player.attack(boss, attack);
+        outputView.printPlayerAttack(attack);
         tryCount++;
     }
 

@@ -28,8 +28,8 @@ public class InputView {
     public int requestAttack() {
         System.out.println();
         System.out.println("어떤 공격을 하시겠습니까?");
-        System.out.println(Attack.PHYSICS.getAttackNumber() + ". 물리 공격");
-        System.out.println(Attack.MAGIC.getAttackNumber() + ". 마법 공격");
+        System.out.println(Attack.PHYSICS.getAttackNumber() + ". " + Attack.PHYSICS.getAttackName());
+        System.out.println(Attack.MAGIC.getAttackNumber() + ". " + Attack.MAGIC.getAttackName());
         return ParsingUtil.parseToInt(READER.nextLine());
     }
 }

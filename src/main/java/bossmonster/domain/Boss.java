@@ -25,9 +25,11 @@ public class Boss {
         hp -= attack.getDamageValue();
     }
 
-    public void attack(Player player) {
+    public int attack(Player player) {
         int randomDamage = DamageGenerator.generate();
         player.damage(randomDamage);
+
+        return randomDamage;
     }
 
     public boolean isFailed() {

@@ -13,4 +13,9 @@ public class OutputView {
         System.out.print(attack.getAttackName() + "을 했습니다. ");
         System.out.println("(입힌 데미지: " + attack.getDamageValue() + ")");
     }
+
+    public void printBossAttack(int damageValue) {
+        System.out.print("보스가 공격 했습니다.");
+        System.out.println("(입힌 데미지: " + damageValue + ")");
+    }
 }

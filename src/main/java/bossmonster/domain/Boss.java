@@ -16,7 +16,8 @@ public class Boss {
 
     private void validateHPRange(int hp) {
         if (hp < HP_MINIMUM_RANGE || hp > HP_MAXIMUM_RANGE) {
-            throw new IllegalArgumentException("보스 몬스터 초기 HP는 " + HP_MINIMUM_RANGE + "이상 " + HP_MINIMUM_RANGE + "입니다.");
+            throw new IllegalArgumentException(
+                    "보스 몬스터 초기 HP는 " + HP_MINIMUM_RANGE + "이상 " + HP_MAXIMUM_RANGE + "이하 입니다.");
         }
     }
 

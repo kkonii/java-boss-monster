@@ -1,6 +1,7 @@
 package bossmonster.view;
 
 import bossmonster.domain.Attack;
+import bossmonster.domain.Player;
 
 public class OutputView {
     public void printBeginning() {
@@ -17,5 +18,9 @@ public class OutputView {
     public void printBossAttack(int damageValue) {
         System.out.print("보스가 공격 했습니다.");
         System.out.println("(입힌 데미지: " + damageValue + ")");
+    }
+
+    public void printGameResult(Player player, int tryCount) {
+        System.out.println(player.getName() + "님이 " + tryCount + "번의 전투 끝에 보스 몬스터를 잡았습니다.");
     }
 }

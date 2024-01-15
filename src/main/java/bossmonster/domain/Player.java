@@ -33,4 +33,8 @@ public class Player {
     public boolean isFailed() {
         return hp <= 0;
     }
+
+    public String getName() {
+        return name;
+    }
 }

@@ -42,8 +42,11 @@ public class Game {
 
     private void fight(Player player, Boss boss) {
         do {
-            turnPlayer(player, boss);
-            if (boss.isFailed()) {
+            if (!player.isFailed()) {
+                turnPlayer(player, boss);
+            }
+            if (boss.isFailed() || player.isFailed()) {
+                printGameExit(player);
                 break;
             }
             turnBoss(player, boss);
@@ -66,7 +69,7 @@ public class Game {
         outputView.printBossAttack(bossDamage);
     }
 
-    private void printGameExit(Player player, Boss boss) {
+    private void printGameExit(Player player) {
         if (player.isFailed()) {
             outputView.printPlayerLose(player);
             return;

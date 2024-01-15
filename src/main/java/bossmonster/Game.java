@@ -8,6 +8,7 @@ import bossmonster.view.InputView;
 import bossmonster.view.OutputView;
 
 public class Game {
+    private static int tryCount = 0;
     private final InputView inputView;
     private final OutputView outputView;
 
@@ -17,6 +18,7 @@ public class Game {
     }
 
     public void run() {
+        initializeTryCount();
         Boss bossMonster = createBossMonster();
         Player player = createPlayer();
         outputView.printBeginning();
@@ -44,9 +46,14 @@ public class Game {
         } while (!boss.isFailed() || !player.isFailed());
     }
 
+    private void initializeTryCount() {
+        tryCount = 0;
+    }
+
     private void turnPlayer(Player player, Boss boss) {
         Attack attack = ParsingUtil.parseToAttack(inputView.requestAttack());
         player.attack(boss, attack);
+        tryCount++;
     }
 
     private void turnBoss(Player player, Boss boss) {

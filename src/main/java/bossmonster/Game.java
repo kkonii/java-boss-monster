@@ -26,14 +26,18 @@ public class Game {
     }
 
     private Boss createBossMonster() {
-        int bossHP = inputView.requestBossHP();
-        return new Boss(bossHP);
+        return InputHandler.handle(() -> {
+            int bossHP = inputView.requestBossHP();
+            return new Boss(bossHP);
+        });
     }
 
     private Player createPlayer() {
-        String name = inputView.requestPlayerName();
-        String points = inputView.requestPlayerPoints();
-        return ParsingUtil.parseToPlayer(name, points);
+        String name = InputHandler.handle(inputView::requestPlayerName);
+        return InputHandler.handle(() -> {
+            String points = inputView.requestPlayerPoints();
+            return ParsingUtil.parseToPlayer(name, points);
+        });
     }
 
     private void fight(Player player, Boss boss) {
